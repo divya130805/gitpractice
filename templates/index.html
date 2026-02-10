@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine 💖</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, hotpink, deeppink, lavender);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Comic Sans MS", cursive;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 70px;
+            text-shadow: 4px 4px 10px #ff69b4;
+        }
+
+        button {
+            font-size: 40px;
+            padding: 20px 60px;
+            margin: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .yes {
+            background-color: #ffb6c1;
+            color: #c4005a;
+        }
+
+        .no {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .flower, .sad {
+            position: absolute;
+            font-size: 45px;
+            animation: fall 4s linear infinite;
+        }
+
+        @keyframes fall {
+            from { top: -50px; }
+            to { top: 100vh; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Surendar 💖<br>You will be my Valentine</h1>
+
+    <button class="yes" onclick="yesClick()">YES 🌸</button>
+    <button class="no" onclick="noClick()">NO 😢</button>
+</div>
+
+<script>
+    function yesClick() {
+        alert("Yay 💖 Flowers for love!");
+        setInterval(() => {
+            let flower = document.createElement("div");
+            flower.className = "flower";
+            flower.innerHTML = "🌸";
+            flower.style.left = Math.random() * window.innerWidth + "px";
+            document.body.appendChild(flower);
+            setTimeout(() => flower.remove(), 4000);
+        }, 300);
+    }
+
+    function noClick() {
+        alert("Oh no 💔");
+        setInterval(() => {
+            let sad = document.createElement("div");
+            sad.className = "sad";
+            sad.innerHTML = "😢";
+            sad.style.left = Math.random() * window.innerWidth + "px";
+            document.body.appendChild(sad);
+            setTimeout(() => sad.remove(), 4000);
+        }, 300);
+    }
+</script>
+
+</body>
+</html>
